@@ -12,6 +12,17 @@ if (process.env.JAWDB_URL) {
     });
   };
 
+if (process.env.JAWDB_URL) {
+  connection = mysql.createConnection(process.env.JAWDB_URL);
+} else {
+    connection = mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'hacktheplanet',
+      database: 'todoagain_db'
+    });
+  };
+
 var connection = mysql.createConnection({
   port: 3306,
   host: "localhost",
